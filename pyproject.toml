@@ -1,7 +1,7 @@
 [project]
-name = "frontend"
+name = "is-this-available"
 version = "0.1.0"
-description = "Add your description here"
+description = "Is this available? Before naming your project, check if that name is widely available across TLDs and socials!"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
