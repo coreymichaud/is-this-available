@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.availability import availability
 
 st.title("Is This Available?", text_alignment = "center")
 
@@ -10,39 +11,25 @@ if name != None and name != "":
 
     st.header("Domains", divider = "rainbow")
 
-    col1, col2 = st.columns(2)
-
-    def available():
-        st.markdown(":color[**Available!**]{foreground = 'green'}", text_alignment = "right", width = "stretch")
-    
-    def unavailable():
-        st.markdown(":color[**Not Available!**]{foreground = 'red'}", text_alignment = "right", width = "stretch")
-
     with st.container(horizontal=True):
+
+        tld = [".com", ".net", ".org", ".ai", ".io", ".xyz", ".dev"]
+
+        col1, col2 = st.columns(2)
 
         with col1:
-            st.write(f"{name}.com")
-            st.write(f"{name}.net")
-            st.write(f"{name}.org")
-            st.write(f"{name}.ai")
-            st.write(f"{name}.io")
-            st.write(f"{name}.xyz")
-            st.write(f"{name}.dev")
+            for ext in tld:
+                st.write(f"{name}{ext}")
 
         with col2:
-            available()
-            unavailable()
-            available()
-            unavailable()
-            available()
-            unavailable()
-            unavailable()
-    
+            for ext in tld:
+                availability(f"{name}{ext}")
+
     st.header("Socials", divider = "rainbow")
 
-    col1, col2 = st.columns(2)
-
     with st.container(horizontal=True):
+
+        col1, col2 = st.columns(2)
 
         with col1:
             st.write(f"Instagram")
@@ -54,10 +41,10 @@ if name != None and name != "":
             st.write(f"LinkedIn")
 
         with col2:
-            available()
-            unavailable()
-            available()
-            unavailable()
-            available()
-            unavailable()
-            unavailable()
+            availability(name)
+            availability(name)
+            availability(name)
+            availability(name)
+            availability(name)
+            availability(name)
+            availability(name)
