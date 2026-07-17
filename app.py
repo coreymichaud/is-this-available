@@ -1,3 +1,8 @@
+"""
+Hello! If you're coming from Streamlit Cloud, please check out the full repository!
+I wish the GH icon would take you there instead of here...
+"""
+
 import streamlit as st
 from utils.availability import availability
 
