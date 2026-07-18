@@ -7,7 +7,7 @@ def available():
 def unavailable():
     st.markdown(":color[**Not Available!**]{foreground = 'red'}", text_alignment = "right", width = "stretch")
 
-def availability(name):
+def tld_availability(name):
     result = subprocess.run(["dig", "NS", name, "+short"], capture_output=True, text=True)
 
     if result.stdout.strip() != '':
