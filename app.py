@@ -4,7 +4,7 @@ I wish the GH icon would take you there instead of here...
 """
 
 import streamlit as st
-from utils.availability import availability
+from utils.tld_availability import tld_availability
 
 st.title("Is This Available?", text_alignment = "center")
 
@@ -28,7 +28,7 @@ if name != None and name != "":
 
         with col2:
             for ext in tld:
-                availability(f"{name}{ext}")
+                tld_availability(f"{name}{ext}")
 
     st.header("Socials", divider = "rainbow")
 
@@ -46,10 +46,10 @@ if name != None and name != "":
             st.write(f"LinkedIn")
 
         with col2:
-            availability(name)
-            availability(name)
-            availability(name)
-            availability(name)
-            availability(name)
-            availability(name)
-            availability(name)
+            tld_availability(name)
+            tld_availability(name)
+            tld_availability(name)
+            tld_availability(name)
+            tld_availability(name)
+            tld_availability(name)
+            tld_availability(name)
