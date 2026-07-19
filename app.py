@@ -5,10 +5,11 @@ I wish the GH icon would take you there instead of here...
 
 import streamlit as st
 from utils.tld_availability import tld_availability
+from utils.social_availability import social_availability
 
 st.title("Is This Available?", text_alignment = "center")
 
-st.markdown("Check if the name you want is available! Enter the name below and hit **Enter**.", text_alignment = "center")
+st.markdown("Check if the name you want is available! Type the name below and hit **Enter**.", text_alignment = "center")
 
 name = st.text_input("Entity", None, label_visibility = "collapsed")
 
@@ -46,10 +47,10 @@ if name != None and name != "":
             st.write(f"LinkedIn")
 
         with col2:
-            tld_availability(name)
-            tld_availability(name)
-            tld_availability(name)
-            tld_availability(name)
-            tld_availability(name)
-            tld_availability(name)
-            tld_availability(name)
+            social_availability(name, "instagram")
+            social_availability(name, "youtube")
+            social_availability(name, "facebook")
+            social_availability(name, "tiktok")
+            social_availability(name, "twitch")
+            social_availability(name, "bluesky")
+            social_availability(name, "linkedin")
