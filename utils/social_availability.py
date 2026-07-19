@@ -7,6 +7,9 @@ def available():
 def unavailable():
     st.markdown(":color[**Not Available!**]{foreground = 'red'}", text_alignment = "right", width = "stretch")
 
+def error():
+    st.markdown(":color[**ERROR!!**]{foreground = 'darkred'}", text_alignment = "right", width = "stretch")
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -121,6 +124,8 @@ def social_availability(name, social, **kwargs):
         return unavailable()
     if taken is False:
         return available()
+    if taken is None:
+        return error()
 
     print(f"[social_availability] ambiguous result for {social}/{name} — try again later, or check manually")
     return None
